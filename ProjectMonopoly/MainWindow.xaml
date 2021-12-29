@@ -1,0 +1,109 @@
+﻿<Window x:Class="ProjectMonopoly.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMonopoly"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="850" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#181735"
+        >
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid
+            Grid.Row="0"
+            Background ="#0F0F2D"
+            Grid.ColumnSpan ="2"
+            Panel.ZIndex="1"
+            MouseDown="Grid_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="MONOPOLY"
+                           Foreground="#FAC354"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="40"/>
+
+                <TextBlock Text="BORDAS Alexandre"
+                           Foreground="White"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+
+                <TextBlock Text="BUQUET Sebastien"
+                           Foreground="White"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+
+                <TextBlock Text="CARVAL Nicolas"
+                           Foreground="White"
+                           Grid.Column="3"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"
+                           FontSize="20"/>
+
+                <Button Content="X"
+                            Foreground="White"
+                            Grid.Column="3"
+                        HorizontalAlignment="Right"
+                            FontSize="17"
+                            FontWeight="Bold" Cursor="Hand"
+                            Margin="0,0,14,0"
+                            Click="ButtonClose_Click" ClickMode="Release">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                            <Setter Property="Background" Value="#FF3B35"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Red"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="26" Height="26"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
