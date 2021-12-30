@@ -61,7 +61,8 @@ namespace ProjectMonopoly
         public void Play()
         {
             bool b = true;
-            for (int tour = 0; tour <= 5 || b == false; tour++)
+            string winner = "No one won, as nobody finished 5 laps";
+            for (int tour = 0; tour <= 30 || b == false; tour++)
             {
                 Console.WriteLine("tour nb°" + tour + "\n");
                 Console.WriteLine(showGame());
@@ -77,10 +78,16 @@ namespace ProjectMonopoly
                         if (participants[i].ReRoll) Console.WriteLine("continue");
                     }
                     while (participants[i].ReRoll);
+                    if (participants[i].NbLap >= 5)
+                    {
+                        b = false;
+                        winner = "The winner is " + participants[i].Name + ". Congratulation !!";
+                    }
                 }
                 //Console.Clear();
             }
             Console.WriteLine("The end !");
+            Console.WriteLine(winner);
         }
     }
 }
