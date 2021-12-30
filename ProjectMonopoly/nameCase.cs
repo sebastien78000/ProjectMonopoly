@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace ProjectMonopoly
 {
-    /// <summary>
-    /// Contain the name of the case of the monopoly
-    /// </summary>
     enum nameCase
     {
         depart,

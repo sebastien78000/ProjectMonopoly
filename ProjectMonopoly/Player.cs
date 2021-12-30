@@ -15,11 +15,6 @@ namespace ProjectMonopoly
         State state;
         int nbLap;
 
-        /// <summary>
-        /// Constructor of the player class
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="token"></param>
         public Player(string name, string token)
         {
             this.name = name;
@@ -29,32 +24,19 @@ namespace ProjectMonopoly
             this.nbLap = 0;
             this.reRoll = true;
         }
-
-        /// <summary>
-        /// Property of state
-        /// </summary>
         public State State
         {
             get { return state; }
             set { state = value; }
         }
-        /// <summary>
-        /// Property of token
-        /// </summary>
         public string Token
         {
             get { return token; }
         }
-        /// <summary>
-        /// Property of name
-        /// </summary>
         public string Name
         {
             get { return name; }
         }
-        /// <summary>
-        /// Property of position
-        /// </summary>
         public int Position
         {
             get { return position; }
@@ -63,9 +45,6 @@ namespace ProjectMonopoly
                 position = value;
             }
         }
-        /// <summary>
-        /// Property of nbLap
-        /// </summary>
         public int NbLap
         {
             get { return nbLap; }
@@ -74,18 +53,13 @@ namespace ProjectMonopoly
                 nbLap = value;
             }
         }
-        /// <summary>
-        /// Property of reRoll
-        /// </summary>
+
         public bool ReRoll
         {
             get { return reRoll; }
             set { reRoll = value; }
         }
 
-        /// <summary>
-        /// Launch the function Move of state and depending of the state, use the Move function of stateJail or stateFree
-        /// </summary>
         public void Play()
         {
             state.Move();

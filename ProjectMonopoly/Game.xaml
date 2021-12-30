@@ -457,7 +457,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="10" Grid.Column="10" Background="#F49100">
+            <Grid Grid.Row="0" Grid.Column="0" Background="#F49100">
                 <TextBlock Text="PRISON"
                                Foreground="Yellow"
                                FontSize="20"
@@ -466,7 +466,7 @@
                                HorizontalAlignment="Center"
                                FontFamily="Fonts/#Dosis">
                     <TextBlock.LayoutTransform>
-                        <RotateTransform Angle="315" />
+                        <RotateTransform Angle="135" />
                     </TextBlock.LayoutTransform>
                 </TextBlock>
             </Grid>
@@ -1316,7 +1316,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Grid.Row="10" Grid.Column="10">
                 <Grid>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -1327,30 +1327,12 @@
                             <ColumnDefinition Width="60"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Rectangle Width="2" Height="80" Fill="Black" HorizontalAlignment="Right" Margin="0,0,40,0" Panel.ZIndex="2" Grid.RowSpan="2"/>
-                        <Rectangle Width="80" Height="2" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,40" Panel.ZIndex="2" Grid.ColumnSpan="2"/>
+                        <Rectangle Width="2" Height="80" Fill="Black" HorizontalAlignment="Right" Margin="0 0 0 0" Panel.ZIndex="2"/>
+                        <Rectangle Width="80" Height="2" Fill="Black" VerticalAlignment="Bottom" Margin="0 0 0 0" Panel.ZIndex="2"/>
 
-                        <Grid Grid.Row="0" Grid.Column="0" Background="#F49100" Grid.ColumnSpan="2" Margin="20,20,0,0" Grid.RowSpan="2">
+                        <Grid Grid.Row="0" Grid.Column="0" Background="#F49100">
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0*"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="VISITE"
-                               TextWrapping="Wrap"
-                               TextAlignment="Center"
-                               Foreground="Black"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center" Height="55" Margin="-55,-39,22,4" Width="93" RenderTransformOrigin="0.204,-0.264" Grid.RowSpan="2">
-                                <TextBlock.LayoutTransform>
-                                    <RotateTransform Angle="90" />
-                                </TextBlock.LayoutTransform>
-                            </TextBlock>
-                        </Grid>
-                        <Grid Grid.Row="0" Grid.Column="1">
                             <TextBlock Text="SIMPLE"
                                TextWrapping="Wrap"
                                TextAlignment="Center"
@@ -1358,9 +1340,23 @@
                                FontSize="12"
                                FontWeight="Medium"
                                VerticalAlignment="Center"
-                               HorizontalAlignment="Center" Margin="-41,2,0,42" Width="61" RenderTransformOrigin="1.219,1.792">
+                               HorizontalAlignment="Center">
                                 <TextBlock.LayoutTransform>
-                                    <RotateTransform Angle="180" />
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <TextBlock Text="VISITE"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Foreground="Black"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="270" />
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
                         </Grid>
