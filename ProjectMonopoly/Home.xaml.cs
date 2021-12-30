@@ -20,12 +20,19 @@ namespace ProjectMonopoly
     /// </summary>
     public partial class Home : Page
     {
+        /// <summary>
+        /// Constructor of the Home window
+        /// </summary>
         public Home()
         {
             InitializeComponent();
-
         }
 
+        /// <summary>
+        /// Recuperate the value of name boxes, put them in a list of player then change window to the window Game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPlay_Click(object sender, RoutedEventArgs e)
         {
             Player player1 = new Player(BoxPlayer1.Text, "#33A4EB");
@@ -46,7 +53,11 @@ namespace ProjectMonopoly
             NavigationService.Navigate(new Game(players));
         }
 
-
+        /// <summary>
+        /// Create a gradient color change when the mouse is on the button play
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPlayHovered(object sender, MouseEventArgs e)
         {
             GradientStopCollection Grad = new GradientStopCollection(2);
@@ -56,6 +67,11 @@ namespace ProjectMonopoly
             ButtonPlay.Background = new LinearGradientBrush(Grad, 0);
         }
 
+        /// <summary>
+        ///  Create a gradient color change when the mouse is not on the button play
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPlayNotHovered(object sender, MouseEventArgs e)
         {
             GradientStopCollection Grad = new GradientStopCollection(2);
