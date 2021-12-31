@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMonopoly
 {
+    
     public class Dice
     {
         static private Random dice = new Random();
