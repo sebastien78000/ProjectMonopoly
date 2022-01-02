@@ -17,6 +17,11 @@ namespace ProjectMonopoly
             this.counter = 0;
             this.p = player;
         }
+
+        /// <summary>
+        /// Function that hnadles the calculation of the new position of the player
+        /// Inclues launching the dices and check if the value of the dices is the same
+        /// </summary>
         public override void Move()
         {
             p.ReRoll = false;
@@ -31,6 +36,12 @@ namespace ProjectMonopoly
             StateChangeCheck(potentialPos);
         }
 
+        /// <summary>
+        /// Function that checks if the state of the player needs to be changed
+        /// If the number of double is equal to three or the position equal to 30 (case go to jail)
+        /// if the state doesn't change the function also calculate the position if the player return to the first case.
+        /// </summary>
+        /// <param name="pos"></param>
         public void StateChangeCheck(int pos)
         {
             if (counter >= 3 || pos == 30)
