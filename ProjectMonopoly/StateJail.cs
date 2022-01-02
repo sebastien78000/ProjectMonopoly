@@ -8,10 +8,18 @@ namespace ProjectMonopoly
 {
     public class StateJail : State
     {
+        /// <summary>
+        /// constructor of the stateFree class with parameter state
+        /// </summary>
+        /// <param name="state"></param>
         public StateJail(State state) : this(state.P)
         {
             this.counter = 0;
         }
+        /// <summary>
+        /// constructor of the stateFree class with parameter player
+        /// </summary>
+        /// <param name="player"></param>
         public StateJail(Player player)
         {
             this.counter = 0;
