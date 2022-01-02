@@ -14,7 +14,10 @@ namespace ProjectMonopoly
 
         // Lock synchronization object
         private static object locker = new object();
-        // Constructor (protected)
+
+        /// <summary>
+        /// Constructor (protected), is used to create the board and the players.
+        /// </summary>
         protected Monopoly()
         {
             this.board = Board.GetInstance();
@@ -30,6 +33,10 @@ namespace ProjectMonopoly
                 participants.Add(player);
             }
         }
+        /// <summary>
+        /// Function called to create the monopoly game, check if a monopoly object already exists. If it doesn't exist then call the constructor function
+        /// </summary>
+        /// <returns></returns>
         public static Monopoly GetMonopoly()
         {
             // Support multithreaded applications through
@@ -48,7 +55,10 @@ namespace ProjectMonopoly
             }
             return instance;
         }
-
+        /// <summary>
+        /// Display the name and position of a player on the console
+        /// </summary>
+        /// <returns></returns>
         public string showGame()
         {
             string s = "";
@@ -58,6 +68,9 @@ namespace ProjectMonopoly
             }
             return s;
         }
+        /// <summary>
+        /// Function that handles the game after its launch and how it ends
+        /// </summary>
         public void Play()
         {
             bool b = true;
