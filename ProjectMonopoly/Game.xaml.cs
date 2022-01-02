@@ -67,17 +67,27 @@ namespace ProjectMonopoly
                                          { 84, 0, 0, 4 },
                                          };
 
+
+        /// <summary>
+        /// Intitilaze the Game window with the list of players coming from the home window
+        /// </summary>
+        /// <param name="players"></param>
         public Game(List<Player> players)
         {
             this.players = players;
             InitializeComponent();
-            Board board = Board.GetInstance();
+            Board board = Board.GetInstance();// intitialization of the board
             UpdateBackground();
             UpdateName();
             InitPawns();
         }
 
 
+        /// <summary>
+        /// The roll button is used as a trigger to launch and finish the turn of a player
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRoll_Click(object sender, RoutedEventArgs e)
         {
             player1Background2.Opacity = 1;
@@ -109,6 +119,9 @@ namespace ProjectMonopoly
 
         }
         
+        /// <summary>
+        /// Update background opacity to have two, three or four cases on the right of the window that contains the anme of the player
+        /// </summary>
         private void UpdateBackground()
         {
             if (players.Count() > 2) {
@@ -124,7 +137,9 @@ namespace ProjectMonopoly
         }
 
 
-
+        /// <summary>
+        /// Write the name of the player in the box on the right of the board
+        /// </summary>
         private void UpdateName()
         {
 
@@ -134,6 +149,9 @@ namespace ProjectMonopoly
             if (players.Count() > 3) player4ID.Text = players[3].Name;
         }
 
+        /// <summary>
+        /// Update opacity of the tokend depending on the number of player
+        /// </summary>
         private void InitPawns()
         {
             if (players.Count() < 4)
@@ -146,7 +164,11 @@ namespace ProjectMonopoly
             }
         }
 
-
+        /// <summary>
+        /// Update the display of the dice depnding on the value of the dice
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="value"></param>
         private void UpdateDice(int number, int value)
         {
             if (number == 1)
@@ -277,6 +299,11 @@ namespace ProjectMonopoly
             }
         }
 
+        /// <summary>
+        /// Move the token from his actual position on the board to its new position depending on the new case and the number of the player
+        /// </summary>
+        /// <param name="numPlayer"></param>
+        /// <param name="targetedCase"></param>
         private void MoveOnSpecificCase(int numPlayer, int targetedCase)
         {
             int m1 = positionCases[targetedCase, 0];
@@ -325,7 +352,10 @@ namespace ProjectMonopoly
 
 
 
-
+        /// <summary>
+        /// Move the token from his actual position on the board to the following case depnding on the number of the player
+        /// </summary>
+        /// <param name="numPlayer"></param>
         private void MoveOneCase(int numPlayer)
         {
             int m1 = 0;
@@ -387,6 +417,11 @@ namespace ProjectMonopoly
             }
         }
 
+        /// <summary>
+        /// Create a gradient color change when the mouse is on the button play
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRollHovered(object sender, MouseEventArgs e)
         {
             GradientStopCollection Grad = new GradientStopCollection(2);
@@ -396,6 +431,12 @@ namespace ProjectMonopoly
             ButtonRoll.Background = new LinearGradientBrush(Grad, 0);
         }
 
+
+        /// <summary>
+        ///  Create a gradient color change when the mouse is not on the button play
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRollNotHovered(object sender, MouseEventArgs e)
         {
             GradientStopCollection Grad = new GradientStopCollection(2);
@@ -405,8 +446,6 @@ namespace ProjectMonopoly
             ButtonRoll.Background = new LinearGradientBrush(Grad, 0);
         }
 
-        private void MovePlayer(int player)
-        {
-        }
+
     }
 }
