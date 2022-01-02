@@ -20,7 +20,7 @@ namespace ProjectMonopoly
 
         /// <summary>
         /// Function that hnadles the calculation of the new position of the player
-        /// Inclues launching the dices and check if the value of the dices is the same
+        /// Inclues launching the dices and check if the value of the dices is the same and sum the number of turn play in a row
         /// </summary>
         public override void Move()
         {
