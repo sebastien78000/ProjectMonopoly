@@ -22,7 +22,7 @@ namespace ProjectMonopoly
     {
         /// <summary>
         /// Constructor of the window End
-        /// Has the name of the as an entry
+        /// Has the name of player who won the game as an entry
         /// </summary>
         /// <param name="player"></param>
         public End(string player)
