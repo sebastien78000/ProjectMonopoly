@@ -21,11 +21,15 @@ namespace ProjectMonopoly
      /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Intitilizae the first window as the Home window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             Main.NavigationService.Navigate(new Home());
         }
+
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -34,6 +38,7 @@ namespace ProjectMonopoly
                 DragMove();
             }
         }
+
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
